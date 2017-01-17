@@ -1,6 +1,6 @@
 ##Ranking/Ordering Evaluation Measures
 
-This package offers an implementation of the Rank Discounted Cumulative Gain (RankDCG) evaluation measure. This measure is designed to evaluate ranking-ordering algorithms. RankDCG had three fundamental properties: 1) consistent lower and upper score bounds, 2) it works with non-normal score distribution, and 3) it has transitivity property. For more detail see the paper (![RankDCG](http://www.dk-lab.com/wp-content/uploads/2014/07/RankDCG.pdf))
+This package offers an implementation of the Rank Discounted Cumulative Gain (RankDCG) evaluation measure. This measure is designed to evaluate ranking-ordering algorithms. RankDCG had three fundamental properties: 1) consistent lower and upper score bounds, 2) it works with non-normal score distribution, and 3) it has transitivity property. For more detail see the paper ([RankDCG](http://www.dk-lab.com/wp-content/uploads/2014/07/RankDCG.pdf))
 
 Bellow is the list of all measures available in this package:
 
