@@ -1,4 +1,4 @@
-"""ranking_eval.measures: a rank-ordering evaluation package for Python
+"""ranking_measures.measures: a rank-ordering evaluation package for Python
 =========================================================================
 
 ranking_eval is a set of common ranking algorithms such as:
@@ -9,8 +9,10 @@ ranking_eval is a set of common ranking algorithms such as:
 *average_precision
 *rankdcg
 
-rankdcg is a new measure and it is discribed in this paper:
-DOTO: add link to rankDCG paper
+rankdcg is a new measure and it is described in this paper:
+”RankDCG: Rank-Ordering Evaluation Measure,” LREC, 2016, Portoroz, Slovenia. 
+Denys Katerenchuk, Andrew Rosenberg 
+http://www.dk-lab.com/wp-content/uploads/2014/07/RankDCG.pdf
 """
 
 __author__ = "Denys Katerenchuk, The Graduate Center, CUNY"
@@ -45,7 +47,7 @@ import math
 
 def find_dcg(element_list):
     """
-    Discounted Comulative Gain (DCG)
+    Discounted Cumulative Gain (DCG)
     The definition of DCG can be found in this paper:
         Azzah Al-Maskari, Mark Sanderson, and Paul Clough. 2007.
         "The relationship between IR effectiveness measures and user satisfaction."
@@ -64,7 +66,7 @@ def find_dcg(element_list):
 
 def find_ndcg(reference, hypothesis):
     """
-    Normalized Discounted Comulative Gain (nDCG)
+    Normalized Discounted Cumulative Gain (nDCG)
     Normalized version of DCG:
         nDCG = DCG(hypothesis)/DCG(reference)
 
@@ -84,7 +86,7 @@ def find_precision_k(reference, hypothesis, k):
     Precision at k
     This measure is similar to precision but takes into account first k elements
 
-    Discription reference:
+    Description reference:
         Kishida, Kazuaki. "Property of average precision and its generalization:
         An examination of evaluation indicator for information retrieval experiments."
         Tokyo, Japan: National Institute of Informatics, 2005.
@@ -111,7 +113,7 @@ def find_precision(reference, hypothesis):
     """
     Presision
 
-  Discription reference:
+    Description reference:
         Kishida, Kazuaki. "Property of average precision and its generalization:
         An examination of evaluation indicator for information retrieval experiments."
         Tokyo, Japan: National Institute of Informatics, 2005.
@@ -131,7 +133,7 @@ def find_average_precision(reference, hypothesis):
     """
     Average Precision
 
-    Discription reference:
+    Description reference:
         Kishida, Kazuaki. "Property of average precision and its generalization:
         An examination of evaluation indicator for information retrieval experiments."
         Tokyo, Japan: National Institute of Informatics, 2005.
@@ -163,10 +165,12 @@ def _order_lists(reference, hypothesis):
 
 def find_rankdcg(reference, hypothesis):
     """
-    rankdcg - modified version of well known DCG measure.
+    RankDCG - modified version of well known DCG measure.
     This measure was designed to work with ties and non-normal rank distribution.
 
-    Discription reference: (NOTE: a paper is currently under review)
+    Description reference:
+    ”RankDCG: Rank-Ordering Evaluation Measure,” LREC, 2016, Portoroz, Slovenia. 
+    Denys Katerenchuk, Andrew Rosenberg
 
     Cost function: relative_rank(i)/reversed_rel_rank(i)
 
