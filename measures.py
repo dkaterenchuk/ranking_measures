@@ -10,9 +10,10 @@ ranking_eval is a set of common ranking algorithms such as:
 *rankdcg
 
 rankdcg is a new measure and it is described in this paper:
-”RankDCG: Rank-Ordering Evaluation Measure,” LREC, 2016, Portoroz, Slovenia. 
-Denys Katerenchuk, Andrew Rosenberg 
+RankDCG is described in this paper:
+"RankDCG: Rank-Ordering Evaluation Measure," Denys Katerenchuk, Andrew Rosenberg
 http://www.dk-lab.com/wp-content/uploads/2014/07/RankDCG.pdf
+
 """
 
 __author__ = "Denys Katerenchuk, The Graduate Center, CUNY"
@@ -169,8 +170,9 @@ def find_rankdcg(reference, hypothesis):
     This measure was designed to work with ties and non-normal rank distribution.
 
     Description reference:
-    ”RankDCG: Rank-Ordering Evaluation Measure,” LREC, 2016, Portoroz, Slovenia. 
-    Denys Katerenchuk, Andrew Rosenberg
+    RankDCG is described in this paper:
+    "RankDCG: Rank-Ordering Evaluation Measure," Denys Katerenchuk, Andrew Rosenberg
+    http://www.dk-lab.com/wp-content/uploads/2014/07/RankDCG.pdf
 
     Cost function: relative_rank(i)/reversed_rel_rank(i)
 
