@@ -38,7 +38,7 @@ print measures.find_rankdcg([9,3,1], [5,1,7])
 # 0.125 
 ```
 
-The algorithm will map and the scores to from the reference to hypothesis and return an evaluation score. In this case, the score is 0.125, which is far from perfect. Keep working on your algorithm!
+The algorithm will map and the scores from the reference to the hypothesis and return an evaluation score. In this case, the score is 0.125, which is far from perfect. Keep working on your algorithm!
 
 
 ##Have questions or comments?
