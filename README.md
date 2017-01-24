@@ -42,7 +42,8 @@ The algorithm will map and the scores from the reference to the hypothesis and r
 
 ##Citation
 Please cite if you use this evaluation in your research.
-'''code
+
+'''python
 @inproceedings{katerenchuk2016rankdcg,
   title={RankDCG: Rank-Ordering Evaluation Measure},
   author={Katerenchuk, Denys and Rosenberg, Andrew},
