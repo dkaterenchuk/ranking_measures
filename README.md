@@ -41,7 +41,18 @@ print measures.find_rankdcg([9,3,1], [5,1,7])
 The algorithm will map and the scores from the reference to the hypothesis and return an evaluation score. In this case, the score is 0.125, which is far from perfect. Keep working on your algorithm!
 
 ##Citation
-Please cite if you use this evaluation in your research. [bibtex](http://bit.ly/2j7BHP9)
+Please cite if you use this evaluation in your research.
+'''code
+@inproceedings{katerenchuk2016rankdcg,
+  title={RankDCG: Rank-Ordering Evaluation Measure},
+  author={Katerenchuk, Denys and Rosenberg, Andrew},
+  booktitle={Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC 2016)},
+  number={978-2-9517408-9-1},
+  year={2016},
+  organization={European Language Resources Association (ELRA)}
+}
+
+'''
 
 ##Have questions or comments?
 Email me: dkaterenchuk [ at ] gradcenter [dot] cuny [dot] edu
