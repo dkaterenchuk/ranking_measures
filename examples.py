@@ -50,12 +50,12 @@ def test_measures(reference, hypothesis):
     Runs all rank-ordering evaluation measures on given pair of lists.
     """
 
-    print "\t DCG:\t\t\t", measures.find_dcg(hypothesis)
-    print "\t nDCG:\t\t\t", measures.find_ndcg(reference, hypothesis)
-    print "\t Precision:\t\t", measures.find_precision(reference, hypothesis)
-    print "\t Precision at k:\t", measures.find_precision_k(reference, hypothesis, len(reference))
-    print "\t Average precision:\t", measures.find_average_precision(reference, hypothesis)
-    print "\t RankDCG:\t\t", measures.find_rankdcg(reference, hypothesis), "\n"
+    print("\t DCG:\t\t\t{0}".format(measures.find_dcg(hypothesis)))
+    print("\t nDCG:\t\t\t{0}".format(measures.find_ndcg(reference, hypothesis)))
+    print("\t Precision:\t\t{0}".format(measures.find_precision(reference, hypothesis)))
+    print("\t Precision at k:\t{0}".format(measures.find_precision_k(reference, hypothesis, len(reference))))
+    print("\t Average precision:\t{0}".format(measures.find_average_precision(reference, hypothesis)))
+    print("\t RankDCG:\t\t{0}".format(measures.find_rankdcg(reference, hypothesis), "\n"))
 
 #Defining test cases
 L1 = [9, 4, 4, 2, 2, 2, 1, 1, 1, 1]
@@ -66,22 +66,22 @@ L5 = [1, 4, 4, 2, 2, 2, 1, 1, 1, 9]
 L6 = [1, 1, 1, 1, 2, 2, 2, 4, 4, 9]
 
 #Testing:
-print "1. Perfect ordering:"
+print("1. Perfect ordering:")
 test_measures(L1, L1)
 
-print "2. Slightly wose case (low ranks):"
+print("2. Slightly wose case (low ranks):")
 test_measures(L1, L2)
 
-print "3. Further worsen case (hight ranks):"
+print("3. Further worsen case (hight ranks):")
 test_measures(L1, L3)
 
-print "4. Placement of a high rank element into the low rank 'subgroup':"
+print("4. Placement of a high rank element into the low rank 'subgroup':")
 test_measures(L1, L4)
 
-print "5. Case #4 but with further misplacement of the hight rank element inside the low rank 'subgroup':"
+print("5. Case #4 but with further misplacement of the hight rank element inside the low rank 'subgroup':")
 test_measures(L1, L5)
 
-print "6. The worst case (reverse ordering):"
+print("6. The worst case (reverse ordering):")
 test_measures(L1, L6)
 
 

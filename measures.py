@@ -148,7 +148,7 @@ def find_average_precision(reference, hypothesis):
     """
 
     s_total = sum([find_precision_k(reference, hypothesis, k+1) for k in \
-                   xrange(len(reference))])
+                   range(len(reference))])
 
     return s_total/len(reference)
 
