@@ -4,7 +4,7 @@ This package offers an implementation of the Rank Discounted Cumulative Gain (Ra
 
 Bellow is the list of all measures available in this package:
 
-* Rank Discounted Cumulative Gain (RankDCG) - a newly proposed measure t
+* Rank Discounted Cumulative Gain (RankDCG) - a newly proposed measure
 * Normalized Discounted Cumulative Gain (nDCG)
 * Discounted Cumulative Gain (DCG)
 * Average Precision (AP)
