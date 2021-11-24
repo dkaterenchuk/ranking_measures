@@ -12,7 +12,7 @@ ranking_eval is a set of common ranking algorithms such as:
 rankdcg is a new measure and it is described in this paper:
 RankDCG is described in this paper:
 "RankDCG: Rank-Ordering Evaluation Measure," Denys Katerenchuk, Andrew Rosenberg
-http://www.dk-lab.com/wp-content/uploads/2014/07/RankDCG.pdf
+https://arxiv.org/abs/1803.00719
 
 """
 
@@ -80,6 +80,32 @@ def find_ndcg(reference, hypothesis):
     """
 
     return find_dcg(hypothesis)/find_dcg(reference)
+
+
+def find_ndcg_with_mapping(reference, hypothesis):
+    """Normalized Discounted Cumulative Gain (nDCG) with mapping to the original values.
+
+    This function takes the prediction of hypothesis and maps the predicted
+    values to the reference values. This will prevent going onver 1.0 if the predictions
+    are overestimated.
+
+    Parameters:
+        reference   - a gold standard (perfect) ordering Ex: [5,4,3,2,1]
+        hypothesis  - a proposed ordering Ex: [5,2,2,3,1]
+
+    Returns:
+        ndcg_score  - normalized score
+    """
+    # with ties, large numbers are put at the end.
+    reference, hypothesis = _order_lists(reference, hypothesis) 
+    # sorts the predictions
+    sorted_hypothesis = sorted([x for x in enumerate(hypothesis)], key=lambda x: x[1], reverse=True)
+    # maps to the real values
+    mapped_hypothesis = [reference[x[0]] for x in sorted_hypothesis]
+    # sort true values
+    ordered_reference = sorted(reference, reverse=True)
+    
+    return find_ndcg(ordered_reference, mapped_hypothesis)
 
 
 def find_precision_k(reference, hypothesis, k):
@@ -172,7 +198,7 @@ def find_rankdcg(reference, hypothesis):
     Description reference:
     RankDCG is described in this paper:
     "RankDCG: Rank-Ordering Evaluation Measure," Denys Katerenchuk, Andrew Rosenberg
-    http://www.dk-lab.com/wp-content/uploads/2014/07/RankDCG.pdf
+    https://arxiv.org/abs/1803.00719
 
     Cost function: relative_rank(i)/reversed_rel_rank(i)
 
@@ -184,7 +210,7 @@ def find_rankdcg(reference, hypothesis):
         score - double: evaluation score
     """
 
-    #Ordering to avoid bias with majority class output
+    # with ties, large numbers are put at the end (needed for consistency)
     reference_list, hypothesis_list = _order_lists(reference, hypothesis)
 
     ordered_list = reference_list[:] # creating ordered list
